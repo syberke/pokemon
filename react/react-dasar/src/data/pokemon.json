@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Pikachu",
+    "type": ["Electric"],
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "description": "A yellow electric mouse Pokémon"
+  },
+  {
+    "name": "Charmander",
+    "type": ["Fire"],
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "description": "A fire-type lizard Pokémon"
+  }
+]

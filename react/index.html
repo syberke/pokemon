@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>React Manual</title>
+    <style>
+        .heading {
+            color: darkblue;
+        }
+
+        .semangat-box {
+            background-color: lightblue;
+            padding: 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Header({ author }) {
+            return (
+                <>
+                    <h1 className="heading">Belajar React Manual bareng Pak {author ? author : "Bakti"}</h1>
+                    <p
+                        className="semangat-box"
+                        onClick={(e) => {
+                            alert("ok");
+                        }}
+                    >
+                        Semangat!
+                    </p>
+                </>
+            );
+        }
+
+        function HomePage() {
+            const student = ["Berke", "Rehan", "Dzikri"];
+            const [likes, setLikes] = React.useState(0);
+            const handleTambah = ()=> setLikes(likes+1)
+            const handleKurang = ()=> setLikes(likes-1)
+            const handleReset = ()=> setLikes(0)
+
+            return (
+                <>
+                    <Header />
+                    <Header author="Mirza" />
+                    <ul>
+                        {student.map((name) => (
+                            <li key={name}>{name}</li>
+                        ))}
+                    </ul>
+                    <h2>jumlah likes {likes}</h2>
+                     <button onClick={handleTambah}>Tambah</button>
+                    <button onClick={handleKurang}>Kurang</button>
+                    <button onClick={handleReset}>Reset</button>
+                </>
+            );
+        }
+
+        const container = document.getElementById("root");
+        const root = ReactDOM.createRoot(container);
+        root.render(<HomePage />);
+    </script>
+</body>
+
+</html>
